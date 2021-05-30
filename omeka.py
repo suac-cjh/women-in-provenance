@@ -39,21 +39,22 @@ Bibliography
 - Empty for now
 '''
 
-
 import csv
 import sys
 import datetime
 
 def main():
-    if (len(sys.argv) < 5):
-        print("Not enough arguments. Please enter: input file, output file, main file, table type (ex: input.csv, output.csv, MAIN.csv, relationships")
-    args = sys.argv[1:]
-    input = args[0]
-    output = args[1]
-    main = args[2]
-    tableType = args[3]
+    inputFile = "input.csv" #input("What file do you want to convert? ")
+    outputFile = "output.csv" #input("To what file do you want to write the converted csv file?")
+    main = "input.csv" #input("File with the SUN_ID and the women associated with them")
+    tableTypes = ["main", "relationships", "activities", "objects", "collections", "sources"]
+    tableType = input("What table type is this? (Options:" + ' '.join(tableTypes) + "): ")
+    while (str(tableType) not in tableTypes):
+        tableType = input("Wrong input. Here are the options:" + ' '.join(tableTypes) + "): ")
 
-    with open(input, "r") as file, open(main, "r") as main_d, open(output, "w") as outFile:
+    creator = input("Who is creating this file? ")
+
+    with open(inputFile, "r") as file, open(main, "r") as main_d, open(outputFile, "w") as outFile:
         reader = csv.DictReader(file, delimiter = ',')
         main = csv.reader(main_d, delimiter = ",")
         writer = csv.writer(outFile, delimiter = ',')
@@ -73,7 +74,7 @@ def main():
             else:
                 rowVals.append('')
             rowVals.append(row["Notes"])
-            rowVals.append("Pauline Arnoud")
+            rowVals.append(creator)
             rowVals.append(tableType)
             rowVals.append("English")
             lineCount += 1
