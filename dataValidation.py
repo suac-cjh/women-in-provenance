@@ -1,21 +1,9 @@
 
 import string
 
-# --------------------------------------------------------------- #
-#						  CONSTANTS		                          # 													  
-# --------------------------------------------------------------- #
-punc = string.punctuation 
-
-# --------------------------------------------------------------- #
-#						HELPER FUNCTIONS                          # 													  
-# --------------------------------------------------------------- #
-
-#def removePunctuation(word):
-#	return word.strip(punc)	
-
-# --------------------------------------------------------------- #
-#					FUNCTIONS TO VALIDATE IDs                     # 													  
-# --------------------------------------------------------------- #
+# --------------------------------------- #
+#		FUNCTIONS TO VALIDATE IDs         # 													  
+# --------------------------------------- #
 
 def checkIDs(col):
 	if not isUniqueIDs(col):
@@ -36,11 +24,20 @@ def isUniqueIDs(col):
 			seen.append(ID)
 	return True
 
-# --------------------------------------------------------------- #
-#					FUNCTIONS TO VALIDATE NAMES                   # 													  
-# --------------------------------------------------------------- #
+# -------------------------------------- #
+#      FUNCTIONS TO VALIDATE NAMES       # 													  
+# -------------------------------------- #
 
 def validateNames(col):
+	newNames = 
+
+def removePunctuation(col):
+	newNames = []
 	for name in col:
-		name.strip(punc)
+		before = name
+		after  = name.strip(string.punctuation)
+		if before != after:
+			print(before, " changed to ", after)
+		newNames.append(after)
+	return newNames
 		
