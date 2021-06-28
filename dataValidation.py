@@ -5,7 +5,7 @@ import string
 from urllib.request import urlopen, URLError	#to check validity of URLs
 
 # ------------------------------------- #
-#		    HELPER FUNCTIONS            #
+#		  HELPER FUNCTIONS              #
 # ------------------------------------- #
 
 def removePunctuation(col):
@@ -32,7 +32,7 @@ def findDelimiter(entry):
 	return delimiter
 
 # ------------------------------------- #
-#		FUNCTIONS TO VALIDATE IDs       #
+#     FUNCTIONS TO VALIDATE IDs         #
 # ------------------------------------- #
 
 def checkIDs(col):
@@ -133,8 +133,8 @@ def checkIsNumbers(sourceList):
 			print(source, "is an invalid source.")
 
 # ------------------------------------- #
-#		  FUNCTIONS TO VALIDATE         #
-#		   BIOGRAPHICAL NOTES           #
+#	   FUNCTIONS TO VALIDATE            #
+#	    BIOGRAPHICAL NOTES              #
 # ------------------------------------- #
 
 def checkURL(col):
