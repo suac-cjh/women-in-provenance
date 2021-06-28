@@ -37,12 +37,21 @@ def main():
 		if checkSex(d["Inferred Sex"]):
 			print("All the inferred sexes are valid!")
 
-		# validate date
+		# validate dates
 		if checkDates(d["Date of Birth"]):
 			print("All the dates of birth are valid!")
 
 		if checkDates(d["Date of Death"]):
 			print("All the dates of death are valid!")
+
+		# validate sources
+		checkSources(d["Sources"])
+
+		# validate biographical notes
+		checkURL(d["Biographical Note"])
+
+		#validate professions
+		d["Profession"] = checkProfessions(d["Profession"])
 
 		# transpose the data back
 		num_of_women = len(d["S_ID"])
