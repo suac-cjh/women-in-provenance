@@ -70,6 +70,10 @@ NATURE_OF_REL = ["Child", "Son", "Daughter", "Colleague", "Friend", "Mentor", "P
 "Partner", "Sibling", "Brother", "Sister", "Wife", "Husband", "Spouse", "Grandchild", "Grandparent", "Nephew",
 "Niece", "Aunt", "Uncle", "Relative"]
 
+# Make sure this is up to date, may need to be updated as needed
+TYPE_OF_ACTIVITY = ["Club", "Event", "Organization", "Job", "Exposition", "Fellow", "Excavation", "Trip", 
+"Project", "Honor Society", "Education"]
+
 
 # ------------------------------------- #
 #		  HELPER FUNCTIONS              #
@@ -297,13 +301,20 @@ def convertState(state):
 
 # ------------------------------------- #
 #	   FUNCTIONS TO VALIDATE            #
-#	  NATURE OF RELATIONSHIPS           #
+#	      DROP-DOWN LISTS               #
 # ------------------------------------- #
 
 def checkNatureOfRel(col):
 	newRelationships =  removePunctuation(col)
 	for relationship in newRelationships:
 		if relationship.title() not in NATURE_OF_REL:
-			print("The relationship", relationship, "is invalid..")
+			print("The relationship", relationship, "isn't an option in the drop-down list..")
 	return newRelationships
+
+def checkTypeOfActivity(col):
+	newActivities =  removePunctuation(col)
+	for activity in newActivities:
+		if activity.title() not in TYPE_OF_ACTIVITY:
+			print("The activity", activity, "isn't an option in the drop-down list..")
+	return newActivities
 
