@@ -4,6 +4,73 @@ from detect_delimiter import detect  #to detect the source delimiter used
 import string
 from urllib.request import urlopen, URLError	#to check validity of URLs
 
+
+CONTINENTS = ["North America", "South America", "Europe", "Asia", "Africa","Oceania", "Antarctica"]
+STATE_TO_ABBREV = {
+    'Alabama': 'AL',
+    'Alaska': 'AK',
+    'American Samoa': 'AS',
+    'Arizona': 'AZ',
+    'Arkansas': 'AR',
+    'California': 'CA',
+    'Colorado': 'CO',
+    'Connecticut': 'CT',
+    'Delaware': 'DE',
+    'District of Columbia': 'DC',
+    'Florida': 'FL',
+    'Georgia': 'GA',
+    'Guam': 'GU',
+    'Hawaii': 'HI',
+    'Idaho': 'ID',
+    'Illinois': 'IL',
+    'Indiana': 'IN',
+    'Iowa': 'IA',
+    'Kansas': 'KS',
+    'Kentucky': 'KY',
+    'Louisiana': 'LA',
+    'Maine': 'ME',
+    'Maryland': 'MD',
+    'Massachusetts': 'MA',
+    'Michigan': 'MI',
+    'Minnesota': 'MN',
+    'Mississippi': 'MS',
+    'Missouri': 'MO',
+    'Montana': 'MT',
+    'Nebraska': 'NE',
+    'Nevada': 'NV',
+    'New Hampshire': 'NH',
+    'New Jersey': 'NJ',
+    'New Mexico': 'NM',
+    'New York': 'NY',
+    'North Carolina': 'NC',
+    'North Dakota': 'ND',
+    'Northern Mariana Islands':'MP',
+    'Ohio': 'OH',
+    'Oklahoma': 'OK',
+    'Oregon': 'OR',
+    'Pennsylvania': 'PA',
+    'Puerto Rico': 'PR',
+    'Rhode Island': 'RI',
+    'South Carolina': 'SC',
+    'South Dakota': 'SD',
+    'Tennessee': 'TN',
+    'Texas': 'TX',
+    'Utah': 'UT',
+    'Vermont': 'VT',
+    'Virgin Islands': 'VI',
+    'Virginia': 'VA',
+    'Washington': 'WA',
+    'West Virginia': 'WV',
+    'Wisconsin': 'WI',
+    'Wyoming': 'WY'
+}
+
+# Make sure this is up to date, may need to be updated as needed
+NATURE_OF_REL = ["Child", "Son", "Daughter", "Colleague", "Friend", "Mentor", "Parent", "Father", "Mother",
+"Partner", "Sibling", "Brother", "Sister", "Wife", "Husband", "Spouse", "Grandchild", "Grandparent", "Nephew",
+"Niece", "Aunt", "Uncle", "Relative"]
+
+
 # ------------------------------------- #
 #		  HELPER FUNCTIONS              #
 # ------------------------------------- #
@@ -13,14 +80,12 @@ def removePunctuation(col):
 	for name in col:
 		before = name
 		after  = name.strip(string.punctuation + ' ')
-		if before != after:
-			print("The name", before, "changed to", after)
 		newNames.append(after)
 	return newNames
 
 def seperateWithSlashes(name):
 	if ' ' in name:
-		print(name, "was seperated by slashes.")
+		print("The name", name, "was seperated by slashes.")
 		return '/'.join(name.split())
 	return name
 
@@ -28,7 +93,6 @@ def findDelimiter(entry):
 	delimiter = detect(entry)
 	if delimiter == None:
 		print("Couldn't find a delimiter for", entry)
-		return '/'
 	return delimiter
 
 # ------------------------------------- #
@@ -53,6 +117,25 @@ def isUniqueIDs(col):
 		else:
 			seen.append(ID)
 	return valid
+
+def inMain(col, sids):
+	valid = True
+	missing = []
+	for ID in col:
+		if ID not in sids and ID not in missing:
+			missing.append(ID)
+			print("The S_ID", ID, "isn't in the MAIN table.")
+			valid = False
+	return valid
+
+def checkSIDs(col):
+	valid = True
+	for ID in col:
+		if not ID.isnumeric() or len(ID) == 0:
+			print(ID, "isn't a valid ID. Please change the ID.")
+			valid = False
+	return valid
+
 
 # -------------------------------------- #
 #      FUNCTIONS TO VALIDATE NAMES       #
@@ -101,6 +184,7 @@ def checkDates(col):
 		if date != "" and not isDate(date):
 			valid = False
 			print(date, "isn't a valid date.")
+	return valid
 
 # -------------------------------------- #
 #    FUNCTIONS TO VALIDATE SOURCES       #
@@ -125,11 +209,15 @@ def splitSources(entry):
 	sources = entry.split(findDelimiter(entry))
 	for i in range(len(sources)):
 		sources[i] = sources[i].strip()
+	# in case the delimiter in wrongly identified
+	for i in sources:
+		if len(i) == 1 and not i.isalnum():
+			sources.remove(i)
 	return sources
 
 def checkIsNumbers(sourceList):
 	for source in sourceList:
-		if not source.isdigit() and source is not '':
+		if not source.isdigit() and source != '':
 			print(source, "is an invalid source.")
 
 # ------------------------------------- #
@@ -168,4 +256,54 @@ def checkProfessions(col):
 		newProfessions.append(newEntry)
 	return newProfessions
 
+# -------------------------------------- #
+#    FUNCTIONS TO VALIDATE LOCATIONS     #
+# -------------------------------------- #
+
+def checkLocations(col):
+	newLocations = []
+	for location in col:
+		if location == '':
+			newLocations.append(location)
+			continue
+		valid = True
+		#print("location:", location)
+		for i in location:
+			if i in string.punctuation and i != ";":
+				print(location, "is an invalid location!", i, "is an unpermitted character..")
+				valid = False
+		if valid:
+			split = removePunctuation(location.title().split(';'))
+			# check first entry is a continent
+			if split[0] not in CONTINENTS:
+				print(location, "is invalid: locations need to start with a continent")
+			if len(split) > 2 and split[1] == "United States":
+				split[2] = convertState(split[2])
+			newLocation = ';'.join(split)
+			if newLocation != location:
+				print(location, "changed to", newLocation)
+			newLocations.append(newLocation)
+		else:
+			newLocations.append(location)
+	return newLocations
+
+def convertState(state):
+	if state in STATE_TO_ABBREV.keys(): 
+		abbreviation = STATE_TO_ABBREV[state]
+		return abbreviation
+	if state.upper() not in STATE_TO_ABBREV.values():
+		print("The state", state, "is invalid..")
+	return state.upper()
+
+# ------------------------------------- #
+#	   FUNCTIONS TO VALIDATE            #
+#	  NATURE OF RELATIONSHIPS           #
+# ------------------------------------- #
+
+def checkNatureOfRel(col):
+	newRelationships =  removePunctuation(col)
+	for relationship in newRelationships:
+		if relationship.title() not in NATURE_OF_REL:
+			print("The relationship", relationship, "is invalid..")
+	return newRelationships
 
