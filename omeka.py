@@ -72,7 +72,7 @@ def main():
         main = csv.DictReader(main_d, delimiter = ",")
         writer = csv.writer(outFile, delimiter = ',')
 
-        header = ['Dublin Core:Title', 'Dublin Core:Subject', 'Dublin Core:Description', 'Dublin Core:Creator', 'Dublin Core:Relation', 'Dublin Core:Language', 'Dublin Core:tags']
+        header = ['Dublin Core:Title', 'Dublin Core:Subject', 'Dublin Core:Description', 'Dublin Core:Creator', 'Dublin Core:Relation', 'Dublin Core:Language', 'Dublin Core:tags', 'Dublin Core:source']
         if (tableType == "relationships" or tableType == "main"):
             header.extend(["Item Type Metadata:Birth Date", "Item Type Metadata:Birthplace", "Item Type Metadata:Death Date", "Item Type Metadata:Occupation", "Item Type Metadata:Biographical Text"])
         if (tableType == "activities"):
@@ -110,7 +110,10 @@ def main():
                 else:
                     fullName = ((row["Position"] + " of the " + row["Activity/Organization Name"]).replace("  ", " ").strip())
             elif (tableType == "sources"):
-                fullName = row["Title"]
+                if row["Title"] != '':
+                    fullName = row["Title"]
+                else:
+                    fullName = row["Type of Source"]
             else: 
                 fullName = ""
             rowVals.append(fullName)
@@ -129,18 +132,22 @@ def main():
                     elif row["Author"] == '':
                         rowVals.append("by " + row["Publication"])
                     else:
-                        rowVals.append(" by " + row["Author"])
-                elif row["Author"] == '':
-                    if row["Publication"] != '':
-                        rowVals.append(row["Type of Source"] + " by " + row["Publication"])
-                    else:
-                        rowVals.append(row["Type of Source"])
+                        rowVals.append("by " + row["Author"])
+                elif row["Author"] == '' and row["Publication"] != '':
+                    rowVals.append(row["Type of Source"] + " by " + row["Publication"])
+                else:
+                    rowVals.append(row["Type of Source"])
             else:
                 rowVals.append("")  #for Biographical Text. We'll change this later once we have something to put.
             rowVals.append(creator)
             rowVals.append(tableType)
             rowVals.append("English")
-            rowVals.append(row["S_ID"])
+            if (tableType == "sources"):
+                rowVals.append(row["S_ID"] + "," + row["ID"])
+                rowVals.append('')
+            else:
+                rowVals.append(row["S_ID"])
+                rowVals.append('+'.join(row["Sources"].split('/')))
 
             if (tableType == "relationships" or tableType == "main"):
                 rowVals.append(row["Date of Birth"])

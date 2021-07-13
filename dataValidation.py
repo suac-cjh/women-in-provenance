@@ -4,65 +4,65 @@ from detect_delimiter import detect  #to detect the source delimiter used
 import string
 from urllib.request import urlopen, URLError	#to check validity of URLs
 
-
 CONTINENTS = ["North America", "South America", "Europe", "Asia", "Africa","Oceania", "Antarctica"]
-STATE_TO_ABBREV = {
-    'Alabama': 'AL',
-    'Alaska': 'AK',
-    'American Samoa': 'AS',
-    'Arizona': 'AZ',
-    'Arkansas': 'AR',
-    'California': 'CA',
-    'Colorado': 'CO',
-    'Connecticut': 'CT',
-    'Delaware': 'DE',
-    'District of Columbia': 'DC',
-    'Florida': 'FL',
-    'Georgia': 'GA',
-    'Guam': 'GU',
-    'Hawaii': 'HI',
-    'Idaho': 'ID',
-    'Illinois': 'IL',
-    'Indiana': 'IN',
-    'Iowa': 'IA',
-    'Kansas': 'KS',
-    'Kentucky': 'KY',
-    'Louisiana': 'LA',
-    'Maine': 'ME',
-    'Maryland': 'MD',
-    'Massachusetts': 'MA',
-    'Michigan': 'MI',
-    'Minnesota': 'MN',
-    'Mississippi': 'MS',
-    'Missouri': 'MO',
-    'Montana': 'MT',
-    'Nebraska': 'NE',
-    'Nevada': 'NV',
-    'New Hampshire': 'NH',
-    'New Jersey': 'NJ',
-    'New Mexico': 'NM',
-    'New York': 'NY',
-    'North Carolina': 'NC',
-    'North Dakota': 'ND',
-    'Northern Mariana Islands':'MP',
-    'Ohio': 'OH',
-    'Oklahoma': 'OK',
-    'Oregon': 'OR',
-    'Pennsylvania': 'PA',
-    'Puerto Rico': 'PR',
-    'Rhode Island': 'RI',
-    'South Carolina': 'SC',
-    'South Dakota': 'SD',
-    'Tennessee': 'TN',
-    'Texas': 'TX',
-    'Utah': 'UT',
-    'Vermont': 'VT',
-    'Virgin Islands': 'VI',
-    'Virginia': 'VA',
-    'Washington': 'WA',
-    'West Virginia': 'WV',
-    'Wisconsin': 'WI',
-    'Wyoming': 'WY'
+ABBREV_TO_STATE = {
+        'AK': 'Alaska',
+        'AL': 'Alabama',
+        'AR': 'Arkansas',
+        'AS': 'American Samoa',
+        'AZ': 'Arizona',
+        'CA': 'California',
+        'CO': 'Colorado',
+        'CT': 'Connecticut',
+        'DC': 'District of Columbia',
+        'DE': 'Delaware',
+        'FL': 'Florida',
+        'GA': 'Georgia',
+        'GU': 'Guam',
+        'HI': 'Hawaii',
+        'IA': 'Iowa',
+        'ID': 'Idaho',
+        'IL': 'Illinois',
+        'IN': 'Indiana',
+        'KS': 'Kansas',
+        'KY': 'Kentucky',
+        'LA': 'Louisiana',
+        'MA': 'Massachusetts',
+        'MD': 'Maryland',
+        'ME': 'Maine',
+        'MI': 'Michigan',
+        'MN': 'Minnesota',
+        'MO': 'Missouri',
+        'MP': 'Northern Mariana Islands',
+        'MS': 'Mississippi',
+        'MT': 'Montana',
+        'NA': 'National',
+        'NC': 'North Carolina',
+        'ND': 'North Dakota',
+        'NE': 'Nebraska',
+        'NH': 'New Hampshire',
+        'NJ': 'New Jersey',
+        'NM': 'New Mexico',
+        'NV': 'Nevada',
+        'NY': 'New York',
+        'OH': 'Ohio',
+        'OK': 'Oklahoma',
+        'OR': 'Oregon',
+        'PA': 'Pennsylvania',
+        'PR': 'Puerto Rico',
+        'RI': 'Rhode Island',
+        'SC': 'South Carolina',
+        'SD': 'South Dakota',
+        'TN': 'Tennessee',
+        'TX': 'Texas',
+        'UT': 'Utah',
+        'VA': 'Virginia',
+        'VI': 'Virgin Islands',
+        'VT': 'Vermont',
+        'WA': 'Washington',
+        'WI': 'Wisconsin',
+        'WV': 'West Virginia',
+        'WY': 'Wyoming'
 }
 
 # Make sure this is up to date, may need to be updated as needed
@@ -71,7 +71,7 @@ NATURE_OF_REL = ["Child", "Son", "Daughter", "Colleague", "Friend", "Mentor", "P
 "Niece", "Aunt", "Uncle", "Relative"]
 
 # Make sure this is up to date, may need to be updated as needed
-TYPE_OF_ACTIVITY = ["Club", "Event", "Organization", "Job", "Exposition", "Fellow", "Excavation", "Trip", 
+TYPE_OF_ACTIVITY = ["Club", "Event", "Organization", "Job", "Exposition", "Fellowship", "Excavation", "Trip", 
 "Project", "Honor Society", "Education"]
 
 
@@ -282,7 +282,7 @@ def checkLocations(col):
 			if split[0] not in CONTINENTS:
 				print(location, "is invalid: locations need to start with a continent")
 			if len(split) > 2 and split[1] == "United States":
-				split[2] = convertState(split[2])
+				split[2] = convertState(split[2]).strip()
 			newLocation = ';'.join(split)
 			if newLocation != location:
 				print(location, "changed to", newLocation)
@@ -292,12 +292,12 @@ def checkLocations(col):
 	return newLocations
 
 def convertState(state):
-	if state in STATE_TO_ABBREV.keys(): 
-		abbreviation = STATE_TO_ABBREV[state]
-		return abbreviation
-	if state.upper() not in STATE_TO_ABBREV.values():
+	if state.upper() in ABBREV_TO_STATE.keys(): 
+		state = ABBREV_TO_STATE[state.upper()]
+		return state
+	if state.title() not in ABBREV_TO_STATE.values():
 		print("The state", state, "is invalid..")
-	return state.upper()
+	return state.title()
 
 # ------------------------------------- #
 #	   FUNCTIONS TO VALIDATE            #

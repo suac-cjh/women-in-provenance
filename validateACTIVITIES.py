@@ -46,10 +46,10 @@ def main():
 			print("All of the end dates are valid!")
 
 		#validate locations
-		checkLocations(d["Location"])
+		d["Location"] = checkLocations(d["Location"])
 
 		# validate sources
-		checkSources(d["Sources"])
+		d["Sources"] = checkSources(d["Sources"])
 
 		# transpose the data back
 		num_of_entries = len(d["S_ID"])
