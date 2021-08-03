@@ -8,6 +8,7 @@ DEFAULT_HEADER = ['Dublin Core:Title', 'Dublin Core:Description', 'Dublin Core:C
 PERSON_METADATA = ["Item Type Metadata:Birth Date", "Item Type Metadata:Birthplace", "Item Type Metadata:Death Date", "Item Type Metadata:Occupation"]
 EVENT_METADATA = ["Item Type Metadata:Duration", "Item Type Metadata:Event Type"]
 HYPERLINK_METADATA = ["Item Type Metadata:URL", "Item Type Metadata:Publication Date", "Item Type Metadata:Citation"]
+TEXT_METADATA = ["Item Type Metadata:Original Format"]
 GEOLOCATION_HEADER = ["geolocation:latitude", "geolocation:longitude", "geolocation:zoom_level"]
 
 ZOOM_LEVEL = 5
@@ -94,7 +95,8 @@ def findLatLong(location):
 	geolocator = Nominatim(user_agent="my_user_agent")
 	loc = geolocator.geocode(address)
 	if loc == None:
-		print("didn't work for:", address)
+		if location != "":
+			print("Location conversion didn't work for:", location)
 		return {"Latitude":'', "Longitude":''}
 	return {"Latitude":loc.latitude, "Longitude":loc.longitude}
 
@@ -170,3 +172,52 @@ def convertSources(reader, s_ids, creator):
 		newRows.append(rowVals)
 	return newRows
 
+def getPublicationDescription(row):
+	description = ""
+	if row["Genre"] != '':
+		description += row["Genre"]
+	description += " " + row["Type of Publication"]
+	if row["Title"] != '':
+		if description != '':
+			description += " named " + row["Title"]
+		else:
+			description += row["Title"]
+	if row["Publication"] != '':
+		description += " published in " + row["Publication"]
+	if row["Publication House"] != '':
+		description += " by " + row["Publication House"]
+	if row["Publication Location"] != '':
+		description += " in " + row["Publication Location"]
+	return description
+
+def getPublicationTitle(row):
+	if row["Title"] != '':
+		return row["Title"]
+	elif row["Publication"] != '':
+		return row['Publication']
+	else:
+		return row["Type of Publication"]
+
+def convertPublications(reader, creator):
+	publicationsHeader = DEFAULT_HEADER + TEXT_METADATA + GEOLOCATION_HEADER
+	newRows = []
+	newRows.append(publicationsHeader)
+	for row in reader:
+		rowVals = []
+		rowVals.append(getPublicationTitle(row))
+		rowVals.append(getPublicationDescription(row))
+		rowVals.append(creator)
+		rowVals.append("English")
+		rowVals.append(row["S_ID"])
+		rowVals.append("Publications")
+		rowVals.append('+'.join(row["Sources"].split('/')))
+		rowVals.append("Text")
+		rowVals.append(row["Type of Publication"])
+
+		coordinates = findLatLong(row["Publication Location"])
+		rowVals.append(coordinates["Latitude"])
+		rowVals.append(coordinates["Longitude"])
+		rowVals.append(ZOOM_LEVEL)
+
+		newRows.append(rowVals)
+	return newRows

@@ -20,7 +20,7 @@ def main():
         elif tableType == "activities":
             rowVals = convertActivities(reader, creator)
         elif tableType == "publications":
-            print("We unfortunately can't convert", tableType, "yet...")
+            rowVals = convertPublications(reader, creator)
         elif tableType == "objects":
             print("We unfortunately can't convert", tableType, "yet...")
         elif tableType == "collections":
