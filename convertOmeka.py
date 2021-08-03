@@ -4,10 +4,13 @@ import datetime
 from geopy.geocoders import Nominatim
 
 TABLETYPES = ["main", "relationships", "activities", "publications", "objects", "collections", "sources"]
-DEFAULT_HEADER = ['Dublin Core:Title', 'Dublin Core:Description', 'Dublin Core:Creator', 'Dublin Core:Language', 'tags', 'Dublin Core:source']
+DEFAULT_HEADER = ['Dublin Core:Title', 'Dublin Core:Description', 'Dublin Core:Creator', 'Dublin Core:Language', 'Tags', 'Collection', 'Dublin Core:Source', 'Dublin Core:Type']
 PERSON_METADATA = ["Item Type Metadata:Birth Date", "Item Type Metadata:Birthplace", "Item Type Metadata:Death Date", "Item Type Metadata:Occupation"]
 EVENT_METADATA = ["Item Type Metadata:Duration", "Item Type Metadata:Event Type"]
 HYPERLINK_METADATA = ["Item Type Metadata:URL", "Item Type Metadata:Publication Date", "Item Type Metadata:Citation"]
+GEOLOCATION_HEADER = ["geolocation:latitude", "geolocation:longitude", "geolocation:zoom_level"]
+
+ZOOM_LEVEL = 5
 
 # global variables so that all functions can access this information
 
@@ -41,7 +44,9 @@ def convertMain(reader, s_ids, creator):
 		rowVals.append(creator)
 		rowVals.append("English")
 		rowVals.append(row["S_ID"])
+		rowVals.append('Main')
 		rowVals.append('+'.join(row["Sources"].split('/')))
+		rowVals.append('Person')
 		rowVals.append(row["Date of Birth"])
 		rowVals.append(row["Place of Birth"])
 		rowVals.append(row["Date of Death"])
@@ -51,7 +56,6 @@ def convertMain(reader, s_ids, creator):
 
 def convertRelationships(reader, s_ids, creator):
 	relationshipsHeader = DEFAULT_HEADER + PERSON_METADATA
-	print("header:", len(relationshipsHeader))
 	newRows = []
 	newRows.append(relationshipsHeader)
 	for row in reader:
@@ -62,12 +66,12 @@ def convertRelationships(reader, s_ids, creator):
 		rowVals.append("English")
 		rowVals.append(row["S_ID"])
 		rowVals.append('+'.join(row["Sources"].split('/')))
+		rowVals.append('Person')
 		rowVals.append(row["Date of Birth"])
 		rowVals.append(row["Place of Birth"])
 		rowVals.append(row["Date of Death"])
 		rowVals.append(row["Profession"].replace("/", "+"))
 		newRows.append(rowVals)
-	print("rows:", len(newRows[1]))
 	return newRows
 
 def getActivityTitle(row):
@@ -84,8 +88,18 @@ def getActivityTitle(row):
 		title = ((row["Position"] + " of the " + row["Activity/Organization Name"]).replace("  ", " ").strip())
 	return title
 
+def findLatLong(location):
+	address = location.split(";")
+	address = address[-1]
+	geolocator = Nominatim(user_agent="my_user_agent")
+	loc = geolocator.geocode(address)
+	if loc == None:
+		print("didn't work for:", address)
+		return {"Latitude":'', "Longitude":''}
+	return {"Latitude":loc.latitude, "Longitude":loc.longitude}
+
 def convertActivities(reader, creator):
-	activitiesHeader = DEFAULT_HEADER + EVENT_METADATA
+	activitiesHeader = DEFAULT_HEADER + EVENT_METADATA + GEOLOCATION_HEADER
 	newRows = []
 	newRows.append(activitiesHeader)
 	for row in reader:
@@ -95,13 +109,21 @@ def convertActivities(reader, creator):
 		rowVals.append(creator)
 		rowVals.append("English")
 		rowVals.append(row["S_ID"])
+		rowVals.append("Activities")
 		rowVals.append('+'.join(row["Sources"].split('/')))
+		rowVals.append('Event')
 		duration = row["Start Date"] + "-" + row["End Date"]
 		if (duration == "-"):
 			duration = ""
 		rowVals.append(duration)
 		eventType = row["Position"] + " of " + row["Activity/Organization Name"] + " (in " + row["Location"] + ")."
 		rowVals.append(eventType)
+
+		coordinates = findLatLong(row["Location"])
+		rowVals.append(coordinates["Latitude"])
+		rowVals.append(coordinates["Longitude"])
+		rowVals.append(ZOOM_LEVEL)
+
 		newRows.append(rowVals)
 	return newRows
 
@@ -140,17 +162,11 @@ def convertSources(reader, s_ids, creator):
 		rowVals.append("English")
 		rowVals.append(row["S_ID"] + "," + row["ID"])
 		rowVals.append('')
+		rowVals.append('Hyperlink')
 		URL = row["Link"]
 		rowVals.append(URL)
 		rowVals.append(row["Publication Date"])
 		rowVals.append(row["Citations"])
 		newRows.append(rowVals)
 	return newRows
-
-def findLatLong(address):
-	geolocator = Nominatim(user_agent="my_user_agent")
-	address = input("Input the address:")
-	loc = geolocator.geocode(address)
-	#print("latitude is :" ,loc.latitude,"\nlongtitude is:" ,loc.longitude)
-	print(address, ":", loc.latitude, ',', loc.longitude)
 
