@@ -1,9 +1,7 @@
 import pandas as pd
-import utm
-from bokeh.plotting import figure, output_file, show, gmap
-from bokeh.models import ColumnDataSource, Range1d, GMapOptions
+from bokeh.plotting import figure, output_file, show
+from bokeh.models import ColumnDataSource, Range1d
 from bokeh.layouts import layout
-from bokeh.palettes import Spectral3
 from bokeh.tile_providers import get_provider
 from geopy.geocoders import Nominatim
 from pyproj import Transformer
@@ -34,20 +32,13 @@ df = df.fillna("")
 df["lon"], df["lat"] = zip(
     *df.apply(lambda x: Loc_to_LongLat(x["Place of Birth"]), axis=1))
 
-print("long:", df["lon"])
-print("lat:", df["lat"])
-
 df["E"], df["N"] = zip(
     *df.apply(lambda x: LongLat_to_EN(x['lon'], x['lat']), axis=1))
 
-print("E:", df["E"])
-print("N:", df["N"])
-
 grouped = df.groupby(['E', "N"])["First"].sum().reset_index()
-
 source = ColumnDataSource(grouped)
 
-p = figure(plot_width=900, plot_height=900)
+p = figure(plot_width=1000, plot_height=650)
 provider = get_provider('CARTODBPOSITRON')
 p.add_tile(provider)
 
@@ -56,4 +47,3 @@ p.circle(x='E', y='N', source=source, size=10, line_color='grey', fill_color='li
 p.axis.visible = False
 
 show(p)
-
