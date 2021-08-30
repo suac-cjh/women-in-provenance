@@ -230,3 +230,4 @@ p.axis.visible = False
 # Displaying the map
 inputs = widgetbox(citizenship_select, deathcause_select, sex_select, birthdate_slider, deathdate_slider)
 show(row(inputs, p, width=300))
+
