@@ -1,0 +1,183 @@
+ID,S_ID,Nature of Relationship,First,Last,Married Surname 1,Married Surname 2,Married Surname 3,Suffix,Middle,Surname,Nickname,Profession,Inferred Sex,Cause of Death,Citizenship,Reason For End of Relationship,Date of Birth,Place of Birth,Date of Death,Place of Death,Date of Marriage,Place of Marriage,Date of Divorce,Reason for Divorce,Sources,Notes
+1,8574,Colleague,Clarence,Moore,,,,,B.,Moore,,Archaeologist,M,,,,,,,,,,,,2,
+2,8574,Colleague,David,Randall-MacIver,,,,,,Randall-MacIver,,University of Pennsylvania Museum Director,M,,,,,,,,,,,,2,
+3,8574,Colleague,George,Gordon,,,,,Byron,Gordon,,University of Pennsylvania Museum Curator/University of Pennsylvania Museum Director,M,,,Death of Relation,,,,,,,,,2,
+4,8574,Colleague,Horace,Jayne,,,,,H.F,Jayne,,University of Pennsylvania Museum Director,M,,,,,,,,,,,,2,
+5,8574,Colleague,Sylavanus,Morley,,,,,,Morley,,Carnegie Institution Archaeologist,M,,,,,,,,,,,,2,
+6,8574,Friend,Robert,Burkitt,,,,,,Burkitt,,University of Pennsylvania Museum Employee,M,,,,,,,,,,,,2,
+7,8574,Friend,Eric,Thompson,,,,,,Thompson,,Chicago Field Museum Archaeologist,M,,,,,,,,,,,,2,
+8,8574,Partner,E,Allen,,,,,Constance,Allen,,George School Dean,F,,,Death of Woman,,Europe;Ireland;Dublin,,North America;United States;Pennsylvania;Chester County;West Chester,,,,,1/2,
+9,9181,Spouse,Émile,Brugsch,,,,,Charles/Albert,Brugsch,,Egyptologist/Curator/Antique Trade Facilitator,M,,,Death of Relation,02/24/1842,Europe;Germany;Berlin,01/14/1930,Europe;France;Alpes-Maritimes;Nice,,,,,2,"We know that Mrs. Brugsch was married to Emile up until at least January 1902 at which time she and her husband lived in Cairo, Egypt according to an outgoing correspondance from Jane Stanford to Emile Brugsch Bey. Mrs. Brugsch was not Emile's first wife. "
+10,9181,Friend,Jane,Lathrop,Stanford,,,,Elizabeth,Lathrop,,University Founder/Collector,F,,,Death of Relation,08/25/1828,North America;United States;New York;Albany County;Albany,02/28/1905,North America;United States Of America;Hawaii;Honolulu County;Honolulu,,,,,3,
+11,9181,Friend,Charles,Wilbour,,,,,Edwin,Wilbour,,Egyptologist,M,,,,03/17/1833,North America;United States;Rhode Island;Newport CountyLittle Compton,12/17/1896,Europe;France;Paris,,,,,7,
+12,9181,Parent,Muhammad,Ghunaim,,,,,Zakarīya,Ghunaim,,,M,,,Death of Relation,,,,,,,,,6,According to an unverified source
+13,9181,Parent,Maryam,Yahya,,,,,,Yahya,,,F,,,Death of Relation,,,,,,,,,6,According to an unverified source
+14,5946,Husband,John,Wait,,,,,Courtland,Wait,,,M,,,Divorce,,,11/24/1937,North America;United States;California;San Francisco County;San Francisco,08/03/1875,North America;United States;Washington;Columbia County;Dayton,01/01/1880,Death of their son,3,
+15,5946,Husband,Frederick,Colburn,,,,,Henry,Colburn,,,M,,,Death of Relation,,,,,10/31/1900,North America;United States;California;San Francisco County;San Francisco,,,3,
+16,5946,Daughter,Myretta,Smith,,,,,,Smith,Etta,,F,,,,01/01/1875,,,,,,,,3,
+17,5946,Daughter,Sylvester,Smith,James,,,,,Smith,Vessie,,F,,,,,,,,,,,,3,
+18,5946,Son,,Smith,,,,,,Smith,,,M,,,,08/01/1879,,10/18/1880,,,,,,3,
+19,5946,Father,James,Smith,,,,,Lafayette,Smith,,,M,,,,,,,,,,,,3/11,
+20,5946,Mother,Susan,Smith,Morris,,,,Kelly,Smith,,,F,,,,,,,,,,,,3/12,
+21,5946,Friend,Boar,People,,,,,CJ,People,,Director of the Procurement Department of the Treasury,M,,,,,,,,,,,,3,
+22,5946,Mentor,Hubert,Bancroft,,,,,Howe,Bancroft,,Historian,M,,,,,,,,,,,,3/13,
+23,5946,Colleague,Alma,Reed,,,,,Marie/Sullivan,Reed,,US Journalist,F,,,,,,,,,,,,3/5/14,
+24,9771,Spouse,George,Collier,,,,,,Collier,,Anthropologist,M,,,,,,,,01/01/1962,North America;United States;Massachusetts;Middlesex County;Cambridge,,,3/15,
+25,9771,Mother,,Fishburne,,,,,,Fishburne,,Homemaker/Foreign Service Magazine,F,,,Death of Relation,,,,,,,,,3,
+26,9771,Father,,Fishburne,,,,,,Fishburne,,Member of Foreign Service,M,,,Death of Relation,,,,,,,,,3,
+27,9771,Sibling,,Fishburne,,,,,,Fishburne,,,M,,,,,,,,,,,,11/54/55,Went to Princeton
+28,9771,Grandparent,,,,,,,,,,Homemaker,F,,,Death of Relation,,,,,,,,,11/33/34/56,Maternal Grandmother
+29,9771,Mentor,Evon,Vogt,,,,,Zartman,Vogt,,Anthropologist,M,,,Death of Relation,08/18/1918,North America;United States;New Mexico;Mckinley County;Gallup,04/13/2004,North America;United States;Massachusetts;Middlesex County;Cambridge,,,,,11/53,
+30,9771,Colleague,Michelle,Rosaldo,,,,,,Rosaldo,Shelly,Anthropologist,F,,,Death of Relation,01/01/1944,North America;United States;New York;New York County;New York,01/01/1981,Asia;Philipines,,,,,11/52,
+31,9771,Friend,Nan,Vogt,,,,,,Vogt,,Co-Researcher,F,,,Death of Relation,,,,,,,,,11/36,
+32,9771,Mentor,Munro,Edmondson,,,,,Sterling,Edmondson,,Linguist and Anthropologist,M,,,Death of Relation,05/18/1924,North America;United States,02/15/2002,North America;United States;Louisiana;Orleans Parish;New Orleans,,,,,9/11/18/33/35,
+33,9771,Colleague,Sylvia,Yanagisako,,,,,Junko,Yanagisako,,Anthropologist,F,,,,07/11/1945,,,,,,,,9/37/41,
+34,9771,Colleague,Laura,Nader,,,,,,Nader,,Anthropologist,F,,,,01/01/1930,,,,,,,,9/38/39/51,
+35,9771,Friend,Nina,Perea,Collier,,,,,Perea,,,F,,,,,,,,,,,,9/11/40/45/50,mother-in-law
+36,9771,Friend,Lucy,Wood,Collier,,,,,Wood,,,F,,,,,,,,,,,,9/42/49,"Married into the collier family and then divorced, married George's grandfather"
+37,9771,Child,David,Collier,,,,,,Collier,,,F,,,,,,,,,,,,9/11/43/46/47,
+38,9771,Child,Son,Collier,,,,,,Collier,,,M,,,,06/01/1963,North America;Mexico;Mexico City,,,,,,,9/11/44/48,
+39,5902,Child,George,,,,,Allen,Collier,,,Stanford Anthropology Emeritus Professor,M,,,Death of Woman,01/06/1942,North America;United States;Washington DC,,,,,,,68/75,
+40,5902,Child,Charles,,,,,Rawson,Collier,,,"Founder, Committee for the Rights of the Disabled",M,,,Death of Woman,09/10/1935,North America;United States;Washington DC,09/06/2011,North America;United States;California;San Francisco County;San Francisco,,,,,16/17/19/21/22/23/24,
+41,5902,Child,Lucy,,,,,,Collier,,,,F,,,Death of Woman,01/01/1940,North America;United States;Washington DC,,,,,,,9/10/11/12/13/14/15/18/19/25/26/27/38/40,
+42,5902,Child,Lionello,Leo,,,,,Collier,Leo,,,M,,,Death of Woman,01/01/1938,North America;United States;Washington DC,,,,,,,1/3/4/28/29/31,
+43,5902,Child,Monica,Schmidt,,,,,Collier,Schmidt,,,F,,,Death of Woman,09/04/1943,North America;United States;Washington DC,09/11/2015,,,,,,1/3/30/31/33,
+44,5902,Spouse,Charles,,,,,Wood,Collier,,,"President, International Institute of Iberian Colonial Art At the College of Santa Fe;Architect, American Embassy",M,,,Death of Woman,02/02/1909,North America;United States;New York;New York County;New York,04/01/1987,North America;United States;New Mexico;Sante Fe County;Santa Fe,09/30/1933,North America;United States;New York; Kings County;New York;Brooklyn,,,3/4/32/33/34/41/42/48,
+45,5902,Parent,Carolyn,Lopez Perera,,,,Allen,,Lopez Perera,,,F,,,Death of Relation,11/16/1883,North America;United States;New York;New York County;New York,9/24/1966,North America;United States;New York;New York County;New York,,,,,33/34/35/36,
+46,5902,Parent,Lionello,Carrie,,,,,Lopez/Perera,Carrie,,Banker,M,,,Death of Relation,06/25/1871,Europe;Italy;Venice,04/26/1942,North America;United States;New York;New York County;New York;Manhattan,,,,,20,"From Venice, Italy"
+47,5902,Sibling,Charles,,,,,Allen,Perera,,,Eye Doctor,M,,,Death of Woman,10/13/1905,North America;United States;New York;New York County;New York,01/27/1998,North America;United States;California;San Diego County;San Diego,,,,,20,
+48,5902,Sibling,Lionelleo,Lionel,,,,Cantomi,Perera,Lionel,,"Banker, Central Hanover Bank and Trust Co",M,,,Death of Relation,03/31/1909,North America;United States;New York;New York County;New York,01/30/1964,North America;United States;New York;New York County;New York,,,,,37/38/39/41,
+49,5902,Sibling,George,,,,,Alfred,Perera,,,"U.S. Coast Guard;Doctor, Peter Bent Brigham Hospital",M,,,Death of Woman,12/29/1911,North America;United States;New York;New York County;New York,09/14/2002,North America;United States;Pennsylvania;Delaware County;Chester,,,,,38/39/41,
+50,5902,Sibling,Lydia,Marcus,,,,,Perera,Marcus,,Actress,F,,,Death of Woman,10/16/1917,North America;United States;New York;New York County;New York,03/18/2008,North America;United States;California;Contra Costa County;Concord,,,,,39/46/47,
+51,5902,Colleague,Nelson,,,,,,Rockefeller,,,Former Vice President of the United States;Coordinator of Inter-American Affairs,M,,,Death of Woman,07/08/1908,North America;United States;Maine;Hancock County;Bar Habor,01/26/1979,North America;United States;New York;New York County;New York,,,,,41,
+52,9074,Spouse,Archie,Demmert,,,,,W.,Demmert,,Teacher/Student/Decorator,M,,,,05/17/1909,North America;United States;Alaska;Wrangell Borough;Wrangell,09/24/1974,North America;United States;Alaska;Juneau;Juneau,09/06/1953,North America;United States;Alaska;Prince Of Wales Outer Ketchikan Precinct;Klawock,,,41,Marriage license signed 08/21/53. Demmert identified race as Indian (native tongue Thinghlet).  SSN: 535-16-9952
+53,9074,Spouse,Thomas,Crow,,,,,O.,Crow,,Civil Engineer,M,,,Death of Relation,10/13/1904,North America;United States;Arizona;Conchise County;Bisbee,12/13/1976,North America;United States;California;Sacramento County;Sacramento,11/09/1963,North America;United States;California;Fresno County;Fresno,,,41/42,
+54,9074,Parent,Elvan,Sanford,,,,,Marley,Sanford,Elvasa,"Telegraph Operator, Southern Pacific Co.",M,,,Death of Relation,04/28/1875,North America;United States;Iowa;Mahaska County;Oskaloosa,12/31/1957,North America;United States;California;Fresno County;Fresno,,,,,41/42/45,
+55,9074,Parent,Mattie,Johnson,Sanford,,,,Louise,Johnson,,None,F,,,Death of Relation,01/01/1878,North America;United States;Iowa;Union County;Creston,01/01/1921,,,,,,3/31/48,
+56,9074,Sibling,Elinor,Sanford,Price,,,,Jane,Sanford,,Fiscal Account Clerk,F,,,Death of Woman,09/04/1914,North America;United States;California;San Joaquin County;Stockton,07/31/2000,,,,,,2,
+57,9074,Relative,Jay,Price,,,,,Arthur,Price,,"Agent, Refrigeration and Scales",M,,,Divorce,06/09/1906,North America;United States;California;San Francisco County;San Francisco,05/04/1991,,,,,,3,Brother-in-law
+58,9074,Colleague,Richard,Okhtokayuk,,,,,,Okhtokayuk,,Shaman,M,,,,10/20/1879,,,,,,,,4,SSN: 340143497
+59,9074,Colleague,Edna,Okhtokayuk,,,,,,Okhtokayuk,,Clothing Craftsman,F,,,,09/20/1892,,,,,,,,5,
+60,9074,Child,Robert,Crow,,,,,Thomas,Crow,,Student,M,,,Death of Woman,09/26/1938,North America;United States;California;Napa County;Napa,,,,,,,1,No evidence of formal adoption by Marian (referred to as step-son in obit);Robert is Thomas's son. Robert lived near Marian at time of her death.
+61,9074,Child,Carolyn,Ketel,Crow,,,,Eva,Ketel,,Research Assistant,F,,,Death of Relation,12/01/1938,North America;United States;Oregon;Multnomah County;Portland,,,,,,,1,Wife of Robert (Daughter-in-law)
+62,9074,Child,Dorothy,Crow,Zieber,,,,Ruth,Crow,,,F,,,,,,,,,,,,1,"Mentioned in 39 as sister of the bridegroom (Robert), shown in 46 and 47 as Thomas's daughter. Never mentioned in direct relation to Marian, child status tenuous."
+63,9074,Grandchild,Kevin,Crow,,,,,,Crow,,,M,,,,,,,,,,,,1,Grandchild (presumably through Robert)
+64,9074,Grandchild,Jennifer,Crow,,,,,,Crow,,,F,,,,,,,,,,,,4,Grandchild (presumably through Robert)
+65,9074,Niece,Norma,Price,Shepard,,,,Lee,Price,,,F,,,,,,,,,,,,2,Niece - Elinor's daughter. Married to Douglas Shepard
+66,9074,Niece,Nancy,Price,Talley,,,,L.,Price,,,F,,,,,,,,,,,,2,Niece - Elinor's daughter
+67,9074,Grandparent,Anna,Holm,Johnson,,,,,Holm,,,F,,,Death of Relation,02/04/1845,Europe;Sweden,07/09/1930,North America;United States;Iowa;Woodbury County;Sioux City,,,,,2,"Maternal grandmother, Swedish citizen. Immigrated 1853"
+68,2860,Parent,John,Meherin,,,,,Vincent,Meherin,,,M,,,,09/05/1892,North America;United States;California;San Francisco County;San Francisco,06/29/1947,North America;United States;California;San Francisco County;San Francisco,,,,,2,
+69,2860,Parent,Essa,Borgel,Meherin,,,,J.,Borgel,,,F,,,,01/01/1897,North America;United States;California,,,,,,,2,
+70,2860,Sibling,John,Meherin,,,,,V.,Meherin,,,M,,,,09/11/1924,North America;United States;California;San Francisco County;San Francisco,12/07/2011,,,,,,1/3,
+71,2860,Sibling,Mark,Meherin,,,,,Mathew,Meherin,,,M,,,,08/28/1931,North America;United States;California;San Francisco County;San Francisco,06/10/2002,North America;United States;California;San Mateo County;San Mateo,,,,,1,
+72,2860,Spouse,William,Eilers,,,,,L.,Eilers,,"News Editor at the Department of State and the Columbia Broadcasting System 
+
+Assistant to the President, Resident Representative in Malaysia/Singapore, Korea, and the Union of Burma at the Asia Foundation 
+
+Developer and Administrator of the Foundation's Asian-wide program in science and technology ",M,,,Death of Woman,,,,,,,,,3/4,
+73,9962,Father,,,,,,,,,,Foundryman,M,,,,,,,,,,,,5/6,
+74,9962,Sister,J,Taylor,Hansen,,,,D.,Taylor,,,F,,,Death of Woman,,,,,,,,,7,
+75,9962,Sister,Edna,Hansen,Hansen,,,,,Hansen,,,F,,,Death of Woman,,,,,,,,,8,
+76,9962,Brother,Edwin,Hansen,,,,,,Hansen,,,M,,,Death of Woman,,,,,,,,,9,
+77,9962,Partner,Francis,Welch,Bertram,,,,,Welch,,Archaeologist with the British Museum,M,,,Separation,01/01/1876,,01/01/1949,,,,,,2/4,"assumed romantic partner, much older than Hansen and important in her field"
+78,9962,Friend,George,Mylonas,,,,,,Mylonas,,Archaeologist,M,,,,,,,,,,,,4/19,life-long friend and supporter
+79,9962,Friend,Natalie,Gifford,,,,,Murray,Gifford,,Student,F,,,,01/01/1897,North America;United States;Massachusetts;Suffolk County;Boston,01/01/1967,,,,,,4/6/7/19,"niece of one of Hazel's professors, they lived together their 1922-23 school year at the American School of Classical Studies in Athens"
+80,9962,Friend,Elizabeth,Pierce,Blegen,,,,,Pierce,,Student,F,,,,,,,,,,,,4/5,"friend of Hazel and Natalie at ASCSA. Once she left for Italy, the three drifted"
+81,9962,Colleague,Dorothy,Burr,,,,,,Burr,,,F,,,,,,,,,,,,4/5,
+82,9962,Friend,John,Papademetriou,,,,,,Papademetriou,,Archaeologist,M,,,,,,,,,,,,4/5,life-long friend and supporter
+83,9962,Mentor,Augustus,Murray,,,,,T.,Murray,,Philogist/Professor at Stanford,M,,,,,,,,,,,,16,Hazel's faculty advisor at Stanford
+84,9962,Colleague,Wace,Heurtley,,,,,,Heurtley,,,M,,,,,,,,,,,,16,
+85,9962,Colleague,Walter,Heurtley,,,,,,Heurtley,,,M,,,,,,,,,,,,18,
+86,9962,Colleague,Christos,Tsountas,,,,,,Tsountas,,Archaeologist,M,,,,01/01/1857,,01/01/1934,,,,,,5/7/8/12/16/21/23/24/25,
+87,9962,Colleague,Oscar,Broneer,,,,,,Broneer,,Professor/Archaelogist,M,,,,,,,,,,,,6/15/17/18,
+88,9962,Mentor,David,Robinson,,,,,,Robinson,,,M,,,,,,,,,,,,19/20/,
+89,9962,Friend,Piet,De Jong,,,,,,De Jong,,Archaeologist,M,,,,,,,,,,,,19/20,
+90,8810,Parent,George,Hempl,,,,,,Hempl,,Philosophy Professor,M,,,,,,,,,,,,19/21,
+91,8810,Parent,Anna Belle,Purmort,Hempl,,,,,Purmort,,,F,,,,,,,,,,,,8,
+92,8810,Spouse,Edmund,Heller,,,,,,Heller,,Zoologist,M,,,Divorce,05/21/1875,North America;United States;Illinois;Stephenson County;Freeport,07/18/1939,North America;United States;California;San Francisco County;San Francisco,01/01/1918,,01/01/1928,,8,
+93,8810,Colleague,Watson,Davis,,,,,,Davis,,Editor of Science News Letter/Founder of American Documentation Institute,M,,,,,North America;United States;Washington DC,06/28/1967,North America;United States;Washington DC,,,,,8/10,
+94,8810,Friend,Helen,Prize,Davis,,,,Miles,Prize,,Chemist,F,,,,01/01/1895,,01/01/1957,,,,,,8/10,
+95,8810,Colleague,Carl,Koford,,,,,B.,Koford,,Biologist,M,,,,09/03/1915,North America;United States;California;Alameda County;Oakland,12/03/1979,North America;United States;California;Alameda;Berkeley,,,,,9,
+96,8810,Colleague,Carl,Akeley,,,,,,Akeley,,Taxidermist/Biologist/Nature Photographer,M,,,,05/19/1864,North America;United States;New York;Orleans County;Clarendon,11/17/1926,Africa;Democratic Republic Of Congo;Mikeno Volcano,,,,,6,
+97,5151,Spouse,Francis,Marshall,,,,,Nathan,Marshall,Fran,Corporate Attorney,M,,,Death of Relation,01/05/1907,North America;United States;Massachusetts;Berkshire County;North Adams,10/30/1997,North America;United States;California;San Francisco County;San Francisco,02/21/1958,North America;United States;California;Santa Clara County;Santa Clara,,,6,
+98,5151,Child,Nancy,Donahoe,,,,,,Donahoe,,,F,,,,01/01/1942,,,,,,,,2/4/5,stepdaughter
+99,5151,Child,Marilyn,Morain,Morain,,,,,Morain,,Rehabilitator and Educator at Wildlife Rescue,F,,,,01/01/1944,,,,,,,,1/6,"stepdaughter / Still alive? May need to contact and clarify that she is the daughter, but if she is that means we may have more information!"
+100,5151,Child,Edward,Armstrong,,,,,,Armstrong,Ed,Department of Fish and Game,M,,,Death of Woman,10/22/1938,North America;United States,11/07/2008,North America;United States;California;Fresno County;Fresno,,,,,1/6,
+101,5151,Child,Richard,Armstrong,,,,,,Armstrong,Dick,,M,,,,01/01/1941,,,,,,,,1/6,
+102,5151,Child,Phyllis,Duzet,,,,,,Duzet,Ginger,,F,,,,01/01/1945,,,,,,,,1/6,
+103,5151,Parent,Edward,Strick,,,,,James,Strick,EJ,,M,,,,,,,,,,,,4/22,
+104,5151,Parent,Edith,Strick,,,,,Mae,Strick,,,F,,,,,,,,,,,,5,
+105,5151,Spouse,Richard,Armstrong,,,,,T.,Armstrong,,,M,,,Divorce,02/23/1911,North America;United States;Michigan,10/21/1973,North America;United States;California;Santa Clara County;Santa Clara,06/15/1936,North America;United States;Nevada;Carson City,,,1/6/12/18,
+106,3578,Spouse,Peter,Paige/Partos/Portos,,,,,Paul,Paige/Partos/Portos,Paul,"Glazier;VItrolite Const Co/Contractor/Merchant;Glass industry
+",M,,,Death of Relation,02/18/1886,Europe;Hungary;Leva,01/28/1955,North America;United States;California;San Mateo County;San Mateo,05/18/1907,North America;United States;California;Los Angeles County;Los Angeles,,,1/6/19,"NOTE: Similar information comes up for the last name Portos/Partos
+Father last name=Partos (change name to Paige later?) 
+
+NOTE: On census- did not attend school, spoke Hungarian, Republican, Immigrated to US in 1902, Mothers maiden name= Huebsch
+
+NOTE: Paige Glass Company started 1910 (same family?)
+Paige Glass: friends with Julia Morgan (architect), consulted with Frank Lloyd Wright for construction of JV Morisson Building on Maiden Lane SF
+
+Military draft date 1942
+SSN(?):546035352"
+107,3578,Child,Robert,Paige,,,,,Paul,Paige,,,M,,,Death of Woman,02/05/1910,North America;United States;California,09/11/1973,North America;United States;California;Santa Cruz County;Rio Del Mar,,,,,1/12,"SSN(?): 545107656
+
+NOTE: Attended Galileo High School;SF"
+108,3578,Parent,Bertha,,Schonck,,,,,,,,F,,,Death of Relation,01/01/1859,Europe;Germany,,,,,,,12/21,
+109,3578,Sibling,Minnie,Schonck,,,,,,Schonck,,,F,,,,01/01/1882,North America;United States;Ohio,,,,,,,12,
+110,3578,Sibling,Adolph/Adolf,Schonck,,,,,,Schonck,,,M,,,,01/01/1888,North America;United States;Nebraska,,,,,,,14/20,
+111,2385,Parent,George,Pierce,,,,,,Pierce,,Professor of botany,M,,,,03/13/1868,Asia;Phillippines;Manila,10/15/1954,North America;United States;California;Santa Clara County;Palo Alto,,,,,12,
+112,2385,Parent,Anna,Hobart,Pierce,,,,,Hobart,,,F,,,,01/01/1869,,04/27/1953,North America;United States;California;Santa Clara County;Palo Alto,,,,,6,
+113,2385,Sibling,Elizabeth,Pierce,Encaid,,,,,Pierce,,,F,,,,,,,,,,,,6,
+114,2385,Sibling,Carolyn,Pierce,Brown,,,,,Pierce,,,F,,,,,,,,,,,,6,
+115,2385,Colleague,Merrill,Bennett,,,,,Kelley,Bennett,,"Director, Food Research Institute",M,,,,02/13/1897,North America;United States;Connecticut;Windham County;Killingley,01/08/1969,,,,,,6,
+116,1914,Spouse,Wallace,Greene,,,,,McNeill,Greene,Wally,,M,,,Divorce,,,,,12/01/1936,,01/01/1949,Multiple affairs by Wallace,5/6,
+117,1914,Spouse,Lawrence,Robertson,,,,,W.,Robertson,"Bob,/Robby",Dean,M,,,Death of Relation,,,05/12/1981,North America;Mexico;Mexico City,12/19/1966,North America;United States;California;Monterey County;Carmel-by-the-Sea,,,24/25/26/27,
+118,1914,Mentor,Charles,Russell,,,,,Marion,Russell,Kid,Artist,M,,,Death of Relation,03/19/1864,North America;United States;Missouri;St Louis,10/24/1926,North America;United States;Montana;Cascade County;Great Falls,,,,,28,
+119,1914,Child,David,Greene,,,,,,Greene,,,M,,,Death of Woman,,,,,,,,,1,
+120,1914,Child,Barbara,Metzner,,,,,,Metzner,,Chef,F,,,Death of Relation,,,04/18/1998,Europe;Belgium;Hasselt,,,,,1/13,
+121,1914,Parent,Ada,Foote,,,,,Emma,Foote,,Teacher,F,,,,,,,,,,,,12/31,
+122,1914,Parent,Darrell,McCann,,,,,Irving,McCann,,"Representative for Swift & Company, a meat packing plant",M,,,,,,,,,,,,12/31,
+123,5551,Parent,Mary,Baird,Bryan,,,,Elizabeth,Baird,,Writer and suffragette,F,,,Death of Relation,06/17/1861,North America;United States;Illinois;Pike County;Perry,01/21/1930,North America;United States;California;Los Angeles County;Hollywood,,,,,12/31,1. Passed Nebraska bar & learned German to help her husband's political career
+124,5551,Parent,William,Bryan,,,,,Jennings,Bryan,The Great Commoner,U.S. Secretary of State (1891-1895),M,,,Death of Relation,03/19/1860,North America;United States;Illinois;Marion County;Salem,07/26/1925,North America;United States;Tennessee;Rhea County;Dayton,,,,,12/31,"Had a huge influence on Ruth, as she pursued politics and continued to be her father's number one fan throughout her life"
+125,5551,Spouse,William,Leavitt,,,,,Homer,Leavitt,,Painter,M,,,Divorce,04/23/1868,North America;United States;Massachusetts;Plymouth County;Scituate,08/08/1951,North America;United States;Massachusetts;Suffolk County;Winthrop,10/03/1903,,1909,"Leavitt left for Europe, leaving Ruth and their two kids without any support",1,Marriage caused her to drop out of University. He was not very present and would often flee to Europe leaving her with their two kids
+126,5551,Spouse,Reginald,Owen,,,,,Altham,Owen,,Officer (Royal Engineers Corp of the British Army),M,,,Death of Relation,07/26/1883,,12/12/1927,North America;United States;Florida,05/03/1910,North America;United States;Nebraska;Lancaster County;Lincoln,,,3,"1. Reginald (Bryan) Jr., 2. Helen Rudd"
+127,5551,Spouse,Børge,Rohde,,,,,,Rohde,,Danish Royal Guards (Captain),M,,,Death of Woman,,,,,07/11/1936,North America;United States;New York;Dutchess County;Hyde Park,,,3,"Gentleman-in-waiting to Frederick, the King of Danes"
+128,5551,Child,Bradfield,Leavitt,,,,,Bryan,Leavitt,,Actor,M,,,Separation,11/16/1905,North America;United States;Colorado;Denver County;Denver,01/02/1943,North America;United States;New York;New York County;New York,,,,,3,"After Ruth's divorce with Leavitt, WJB got custody of his grandchildren. Bryan eventually changed his name to John Bryan, moved to NYC, pursued acting, and died of suicide."
+129,5551,Child,Ruth,Leavitt,,,,,,Leavitt,Kitty,,F,,,Separation,,,,,,,,,3,"After Ruth's divorce with Leavitt, WJB got custody of his grandchildren."
+130,5551,Child,Reginald,Owen,,,,Jr,Bryan,Owen,,CO State HoR Candidate,M,,,Death of Woman,04/14/1913,Europe;England;Kent,08/14/2000,North America;United States;Colorado;Denver County;Denver,,,,,10/11/16,Placed 20th out of 27 candidates in the Democratic primary
+131,5551,Child,Helen,Owen,,,,,Rudd,Owen,,,F,,,Death of Woman,,,,,,,,,,Daughter of Reginald and Ruth (no find a grave entry?)
+132,5551,Friend,Lou,Henry,Hoover,,,,,Henry,,First Lady of the United States,F,,,Death of Woman,,,,,,,,,,"Very close, were in the American Women's War Relief Fund Association"
+133,5551,Friend,(The),Roosevelts,,,,,,Roosevelts,,President and First Lady of the United States (1933-1945),,,,Death of Woman,,,,,,,,,,Provided the venue (their church on Hyde Park) for Ruth and Borge's marriage. FDR also appointed her to be the Minister to the Kingdom of Denmark
+134,5551,Colleague,William,Sears,,,,,J.,Sears,,Congressman (U.S. HoR 1915-1929),M,,,,,,,,,,,,,"Sears campaigned against Ruth for the Fourth district of FL seat, beat her in 1926, but lost the Democratic primary to her in 1928."
+135,5551,Colleague,William,Lawson,,,,,C.,Lawson,,Candidate for FL Fourth District Representative,M,,,,,,,,,,,,,"When Ruth defeated him by a 67,130 to 36,288 margin, he later challenged the 1928 election saying that Ruth had not been a U.S. citizen for seven years, given her ten year marriage to a British man (Owen). When taken to court, Owen appeared without an attorney because she believed the elements we are considering are so simple that they do not require any legal representation."
+136,5551,Friend,Carrie,Dunlap,,,,,,Dunlap,,Campaign Treasurer for William Bryan,F,,,Death of Woman,,North America;United States;Illinois,,,,,,,,"Very close friend of hers, there are notes of many exchanges/letters between the two of them. Definitely need to explore these letters more"
+137,5551,Friend,King Frederick,,,,,IX,,,,King of Denmark,M,,,Death of Woman,,,,,,,,,,"Served as the King of Denmark while Ruth was the acting Minister of Denmark. They worked together and had a good relationship, with him awarding her the Distinguished Service Medal eventually."
+138,5551,Colleague,Herbert,Hoover,,,,,,Hoover,,President of the United States (1929-1933),M,,,,,,,,,,,,,President during Owen's ultimate term. Praised her for teaching the privilege and the sacred character of the ballot.
+139,6736,Spouse,Jerome,Thomas,,,,Jr,Beers,Thomas,,Surgeon,M,,,,04/30/1867,North America;United States;Kansas;Wyandotte County,01/01/1948,,10/13/1896,North America;United States;Ohio;Hamilton County;Montgomery,,,,
+140,6736,Friend,William,Taft,,,,,Howard,Taft,,High Commissioner of the Philippines;President,M,,,,09/15/1857,North America;United States;Ohio;Hamilton County;Cincinnati,03/08/1930,North America;United States;Washington DC,,,,,,
+141,6736,Friend,Mercy,Brett,,,,,,Brett,,Caregiver at Soldier's Home,F,,,,,,,,,,,,,
+142,6736,Friend,Luke,Wright,,,,,C.,Wright,,Commissioner of the Philippines,M,,,,08/29/1846,North America;United States;Tennessee;Giles County,11/17/1922,North America;United States;Tennessee;Shelby County;Memphis,,,,,,
+143,6736,Friend,Henry,Ide,,,,,Clay,Ide,,Commissioner of the Philippines,M,,,,09/18/1844,North America;United States;Vermont;Caledonia County;Barnet,06/13/1921,North America;United States;Vermont;Caledonia County;St. Johnsbury,,,,,,
+144,6736,Friend,Bernard,Moses,,,,,,Moses,,Commissioner of the Philippines,M,,,,01/01/1846,,01/01/1931,,,,,,,
+145,6736,Friend,Dean,Worcester,,,,,C.,Worcester,,Commissioner of the Philippines,M,,,,,,,,,,,,,
+146,6736,Parent,Abram,Wilt,,,,Sr,Darst,Wilt,,,M,,,,,,,,,,,,,
+147,6736,Parent,Mary,Bickham,Wilt,,,,Ella,Bickham,,,F,,,,,,,,,,,,,
+148,6736,Sibling,Emily,,,,,,,,,,F,,,,,,,,,,,,,
+149,6736,Sibling,Abram,Wilt,,,,Jr,Darst,Wilt,,,M,,,,,,,,,,,,,
+150,6736,Colleague,Albert,Jenks,,,,,Ernest,Jenks,,Anthropologist,M,,,,01/01/1869,,01/01/1953,,,,,,,
+9181,9181,,Mary,Baker,,,,,Louise,Baker,M.,Illustrator/Teacher/Writer,F,Natural causes,United States,,08/04/1872,North America;United States;Ohio;Stark County/Mahoning County;Alliance,07/15/1962,North America;United States;Pennsylvania;Chester County;West Chester,,,,,,
+5946,5946,,Sherine,Yahya,Brugsch,,,,Maryam,Brugsch,,Socialite?,F,,,,01/01/1879,Africa;Egypt;Al Iskandariyah;Ash Shatibi,04/27/1935,Europe;France;Alpes Maritimes;Nice,,,,,,
+9771,9771,,Eunice,Smith,Wait,Colburn,,,Sophronia,Colburn,Frona,Author/Journalist,F,Natural causes,United States,,08/19/1859,North America;United States;California;Yolo County;Woodland,01/01/1946,North America;United States;California;San Francisco County;San Francisco,,,,,,
+5902,5902,,Jane,Fishburne,Collier,,,,,Collier,,Anthropologist,F,,United States,,01/01/1940,North America;United States;South Carolina;Charleston County;Charleston,,,,,,,,
+9074,9074,,Nina,,Collier,,,,Perera,Collier,,Government Official/Arts Administrator/Author/Founder,F,Unspecified illness,United States,,01/06/1907,North America;United States;New York;New York County;New York;Manhattan,06/01/1973,North America;United States;New Mexico;Santa Fe County; Santa Fe,,,,,,
+2860,2860,,Marian,Sanford,Demmert,Crow,,,Helene,Crow,,Public Health Nurse,F,Natural causes,United States,,02/20/1911,North America;United States;California;San Joaquin County;Lathrop,09/25/1994,North America;United States;California;Fresno County;Fresno,,,,,,
+9962,9962,,Janice,Meherin,Eilers,,,,Eleanor,Eilers,,Stanford University ,F,,United States,,06/21/1927,North America;United States;California;San Francisco County;San Francisco,,North America;United States;California;San Mateo County;San Mateo,,,,,,
+8810,8810,,Hazel,Hansen,,,,,Dorothy,Hansen,,Classics professor at Stanford,F,,United States/Greece,,01/01/1899,North America;United States;California;San Mateo County;San Mateo,12/19/1962,North America;United States;California;Santa Clara County;Palo Alto;Palo Alto Hospital,,,,,,
+7394,7394,,Hilda,Hempl,Heller,,,,,Heller,,Biologist/Bacteriologist ,F,Perforated ulcer/Hemorrhage,United States,,08/05/1891,North America;United States;Minnesota;Washtenaw County;Washtenaw,05/01/1964,South America;Peru;Arequipa,,,,,,
+5151,5151,,Fujiko,Imamura,,,,,,Imamura,,,F,,Japan,,,,,,,,,,,
+3578,3578,,Jean,Strick,Marshall,Armstrong,,,Margaret,Armstromg,,Docent,F,,United States,,01/20/1913,Asia;China;Fujian;Xiamen,01/30/1999,North America;United States;California;San Francisco County;San Francisco,,,,,,
+2385,2385,,Gertrude,Schonck,Paige,,,,Louise,Paige,,Housewife,F,,United States,,12/18/1885,North America;United States;Illinois,10/11/1964,North America;United States;California;San Mateo County;San Mateo,,,,,,
+1914,1914,,Rosamond,Pierce,,,,,Hobart,Pierce,,Statistician,F,Unspecified cancer,United States,,01/08/1908,North America;United States;California;Santa Clara County;Santa Clara,03/28/1975,North America;United States;California;Santa Clara County;Santa Clara,,,,,,
+5551,5551,,Merle,,Greene,Robertson,,,,Robertson,,Artist/Art Historian/Archaeologist/Mayanist,F,Natural causes,United States,,08/30/1913,North America;United States;Montana;Custer County;Miles City,04/22/2011,North America;United States;California;San Francisco County;San Francisco,,,,,,
+6736,6736,,Ruth,Bryan,Leavitt,Owen,Rohde,,Baird,Rohde,,Congresswoman/Lecturer/Nurse/Foreign Minister/Vice President of University of Miami's Board of Regents,F,Heart attack,United States,,10/02/1885,North America;United States;Illinois;Morgan County;Jacksonville,07/26/1954,Europe;Denmark;Copenhagen,,,,,,
+,,,Mary,Wilt,Thomas,,,,Denison,Thomas,Denison,City Councilwoman,F,Natural causes,United States,,11/19/1874,North America;United States;Ohio;Montgomery County;Dayton,07/01/1983,North America;United States;California;Santa Clara County;Palo Alto;Channing House,,,,,,
