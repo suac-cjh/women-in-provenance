@@ -1,3 +1,20 @@
+'''
+Name: validateMain.py
+Contact: Pauline Arnoud (parnoud@stanford.edu)
+
+This file validates the data from the MAIN table by checking the SIDs,
+IDs, dates, locations, nature of relationships, and sources. 
+The functions called to validate the data can be found in the dataValidation.py file.
+
+Please make sure to read the output message to check which mistakes you need to correct
+yourself! While some mistakes are corrected automatically by the code, the code doesn't 
+know how to deal with other issues.
+
+See the following document for a breakdown of what exactly the program checks for:
+https://docs.google.com/document/d/1a-uTqLAWqCMjqtUBQ5n-6QHgq8zuAgmIPpvZIGqLsXg/edit?usp=sharing 
+'''
+
+#import libraries
 from dataValidation import *
 import csv
 import sys

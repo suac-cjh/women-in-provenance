@@ -1,3 +1,14 @@
+'''
+Name: dataValidation.py
+Contact: Pauline Arnoud (parnoud@stanford.edu)
+
+This file contains the functions called by validateACTIVITIES.py, validateMAIN.py and 
+validateRELATIONSHIPS.py to check the data for mistakes.
+
+See the following document for a breakdown of what exactly the program checks for:
+https://docs.google.com/document/d/1a-uTqLAWqCMjqtUBQ5n-6QHgq8zuAgmIPpvZIGqLsXg/edit?usp=sharing 
+'''
+
 import csv
 import datetime
 from detect_delimiter import detect  #to detect the source delimiter used

@@ -1,4 +1,20 @@
-# Importing libraries
+'''
+Name: bokehMap.py
+Contact: Pauline Arnoud (parnoud@stanford.edu)
+
+This file contains the code to create the bokeh Map which can filter
+data based on citizenship, cause of death, inferred sex, and date of 
+birth/death.
+
+Depending on whether you want to output the map itself or the html code
+for the map (to embed it into Omeka), please comment/uncomment the appropriate
+lines at the very end of the code.
+
+Make sure to activate the bokeh-env virtual environment before running the code
+if you don't want to install all the libraries yourself.
+'''
+
+# importing libraries
 from datetime import datetime, date
 import pandas as pd
 from bokeh.layouts import widgetbox, row
@@ -16,6 +32,11 @@ from bokeh.models.widgets import DateRangeSlider
 from bokeh.tile_providers import get_provider
 from geopy.geocoders import Nominatim
 from pyproj import Transformer
+
+from bokeh.embed import components
+from bokeh.resources import CDN
+from bokeh.embed import file_html
+from bokeh.layouts import row
 
 # Setting the bokeh output file at which to display the finished map
 output_file('bokeh_map.html')
@@ -59,6 +80,7 @@ df["Birth_E"], df["Birth_N"] = zip(
 df["Death_E"], df["Death_N"] = zip(
     *df.apply(lambda x: LongLat_to_EN(x['Death_lon'], x['Death_lat']), axis=1))
 
+# Changing some of the column names to remove the spaces and to convert date to datetimes
 df = df.rename(columns={"Cause of Death":"deathcause"})
 df = df.rename(columns={"Inferred Sex": "inferredsex"})
 df["birthdate"] = pd.to_datetime(df["Date of Birth"])
@@ -68,11 +90,13 @@ df["deathdate"] = pd.to_datetime(df["Date of Death"])
 source = ColumnDataSource(df)
 
 # Creating a figure and setting its background to a blank map
-p = figure(plot_width=1000, plot_height=650, title="Map", 
+p = figure(plot_width=580, plot_height=450, title="WiP Interactive Map", 
            x_range = (-18706892.5544, 21289852.6142), y_range = (-7631472.9040, 12797393.0236))
 provider = get_provider('CARTODBPOSITRON')
 p.add_tile(provider)
 
+# creating the citizenship filter by making a list of the different options, creating a Select
+# widget with those options and its associated IndexFilter
 citizenship_options = ["All"] + sorted(list(df["Citizenship"].unique()))
 citizenship_options.remove("")
 for elem in citizenship_options:
@@ -89,6 +113,8 @@ citizenship_select = Select(
 
 citizenship_filter = IndexFilter(indices=list(range(len(df))))
 
+# creating the deathcause filter by making a list of the different options, creating a Select
+# widget with those options and its associated IndexFilter
 deathcause_options = ["All"] + sorted(list(df["deathcause"].unique()))
 deathcause_options.remove("")
 for elem in deathcause_options:
@@ -104,13 +130,18 @@ deathcause_select = Select(
 )
 deathcause_filter = IndexFilter(indices=list(range(len(df))))
 
+# creating the inferred sex filter by making a list of the different options, creating a Select
+# widget with those options and its associated IndexFilter
 sex_options = ["All"] + sorted(list(df["inferredsex"].unique()))
-sex_options.remove("")
+if "" in sex_options:
+    sex_options.remove("")
 sex_select = Select (
     title="Inferred Sex", value="All", options=sex_options
 )
 sex_filter = IndexFilter(indices=list(range(len(df))))
 
+# creating the birthdate slider by defining the date range, creating a DateRangeSlider
+# widget with those start/end dates and its associated IndexFilter.
 start = date(1825, 1, 1)
 end = date.today()
 
@@ -118,13 +149,17 @@ birthdate_slider = DateRangeSlider(title="Birth Between", start=start,
                                    end=end, value=(start, end), step = 1)
 birthdate_filter = IndexFilter(indices=list(range(len(df))))
 
+# creating the deathdate slider by defining the date range, creating a DateRangeSlider
+# widget with those start/end dates and its associated IndexFilter.
 deathdate_slider = DateRangeSlider(title="Death Between", start=start, 
                                    end=end, value=(start, end), step = 1)
 deathdate_filter = IndexFilter(indices=list(range(len(df))))
 
+# defining the CDSView to select subsets of data based on the filters 
 view = CDSView(source=source, filters=[deathcause_filter, citizenship_filter, 
                                        sex_filter, birthdate_filter, deathdate_filter])
 
+# defining the JS callback to follow then the citizenship select bar value is changed 
 citizenship_select.js_on_change(
     "value",
     CustomJS(
@@ -140,6 +175,7 @@ citizenship_select.js_on_change(
     ),
 )
 
+# defining the JS callback to follow then the deathcause select bar value is changed 
 deathcause_select.js_on_change(
     "value",
     CustomJS(
@@ -155,6 +191,7 @@ deathcause_select.js_on_change(
     ),
 )
 
+# defining the JS callback to follow then the inferred sex select bar value is changed 
 sex_select.js_on_change(
     "value",
     CustomJS(
@@ -170,6 +207,7 @@ sex_select.js_on_change(
     ),
 )
 
+# defining the JS callback to follow then the start or end date value is changed on the birthdate slider
 birthdate_slider.js_on_change(
     "value",
     CustomJS(
@@ -188,6 +226,7 @@ birthdate_slider.js_on_change(
     )
 )
 
+# defining the JS callback to follow then the start or end date value is changed on the deathdate slider
 deathdate_slider.js_on_change(
     "value",
     CustomJS(
@@ -212,8 +251,7 @@ p.circle(x='Birth_E', y='Birth_N', size=10,
 p.circle(x='Death_E', y='Death_N', size=10, 
          line_color='grey', fill_color='tomato', legend_label="Place of Death", source=source, view=view)
 
-# Creating a hover tool to display additional information on the point
-# everytime a mouse hovers over it.
+# Creating a hover tool to display additional information on the point everytime a mouse hovers over it.
 hover = HoverTool()
 hover.tooltips = [
     ("First", "@First"),
@@ -229,5 +267,18 @@ p.axis.visible = False
 
 # Displaying the map
 inputs = widgetbox(citizenship_select, deathcause_select, sex_select, birthdate_slider, deathdate_slider)
+
+'''
+Depending on whether you want to display the map in an output html file or print out the html source
+code for the map, you either want to comment out the show() command and uncomment the html and print lines
+to print the html code or vice versa.
+
+!! Make sure both options aren't uncommented at the same time !!
+'''
+
+# Uncomment this line to show the map directly in an html file.
 show(row(inputs, p, width=300))
 
+# Uncomment these two lines to output the html code for the map (used to embed the map in Omeka)
+#html = file_html(row(inputs, p), CDN, "WiP Map")
+#print(html)

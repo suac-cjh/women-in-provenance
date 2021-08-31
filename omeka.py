@@ -1,3 +1,14 @@
+'''
+Name: omeka.py
+Contact: Pauline Arnoud (parnoud@stanford.edu)
+This script converts a csv file from the WiP data table to a corretly
+formatted csv file for Omeka import.
+All the functions called can be found in the convertOmeka.py file
+
+There is no data validation/check! This program assumes correct input file.
+'''
+
+# importing libraries
 from convertOmeka import *
 import csv
 
@@ -12,6 +23,7 @@ def main():
         s_ids = createSIDdict(main)
         creator = inputs["creator"]
 
+        #calling the appropriate function based on the table type.
         tableType = inputs["tableType"]
         if tableType == "main":
             rowVals = convertMain(reader, s_ids, creator)
@@ -30,6 +42,7 @@ def main():
         else:
             rowVals = []
 
+        # writing the returned rows to the output file
         for row in rowVals:
             writer.writerow(row)
             print(row)
